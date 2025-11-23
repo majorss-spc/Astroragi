@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AstroRagi — Chat with Master Ragi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="chat" class="page">
+<canvas id="starfield"></canvas>
+<header class="topbar">
+  <div class="brand-row">
+    <div class="logo small">♌</div>
+    <span class="brand">Chat with Master Ragi</span>
+  </div>
+  <nav class="nav">
+    <a href="astrologers.html">Astrologers</a>
+    <a href="#" id="settingsBtn">Settings</a>
+    <a href="#" id="detailsBtn">Details</a>
+  </nav>
+</header>
+<main class="chat-wrap fade-in">
+  <div id="chatWindow" class="chat-window"></div>
+  <div id="typing" class="typing">Master Ragi is typing...</div>
+  <div class="composer">
+    <input id="chatInput" type="text" placeholder="Type your question...">
+    <button id="sendBtn" class="btn glow">Send</button>
+  </div>
+</main>
+<div id="settingsModal" class="modal-backdrop">
+  <div class="modal-card card">
+    <h3 class="brand small">Chat Settings</h3>
+    <div class="settings-grid">
+      <label for="apiKeyInput">Groq API Key</label>
+      <input id="apiKeyInput" type="password" placeholder="gsk_...">
+      <label for="modelSelect">Model</label>
+      <select id="modelSelect">
+        <option value="llama-3.1-8b-instant">llama-3.1-8b-instant</option>
+        <option value="mixtral-8x7b-32768">mixtral-8x7b-32768</option>
+        <option value="llama3-70b-8192">llama3-70b-8192</option>
+      </select>
+      <label class="toggle-row"><input type="checkbox" id="aiToggle"> Use AI replies</label>
+    </div>
+    <div class="settings-actions">
+      <button id="saveSettingsBtn" class="btn glow">Save</button>
+      <button id="clearKeyBtn" class="btn glow alt">Clear Key</button>
+      <button id="closeSettingsBtn" class="btn glow">Close</button>
+    </div>
+    <div id="settingsMsg" class="message"></div>
+  </div>
+</div>
+<div id="detailsModal" class="modal-backdrop">
+  <div class="modal-card card">
+    <h3 class="brand small">Astrology Details</h3>
+    <div class="settings-grid">
+      <label for="dobInput">Date of Birth</label>
+      <input id="dobInput" type="date" placeholder="YYYY-MM-DD">
+      <label for="timeInput">Time of Birth</label>
+      <input id="timeInput" type="time" placeholder="HH:MM">
+      <label for="placeInput">Place of Birth</label>
+      <input id="placeInput" type="text" placeholder="City, Country">
+    </div>
+    <div class="settings-actions">
+      <button id="saveDetailsBtn" class="btn glow">Save</button>
+      <button id="closeDetailsBtn" class="btn glow">Close</button>
+    </div>
+    <div id="detailsMsg" class="message"></div>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
